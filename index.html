@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mr. Prathmesh R. Gosavi | Assistant Professor, AI &amp; DS</title>
+  <meta name="description" content="Academic portfolio: profile, FDP/STTP workshops, certifications, guest lectures, publications, patents and achievements.">
+  <meta name="theme-color" content="#1c181b">
+  <link rel="preload" href="assets/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a class="brand-sm" href="#home" translate="no">P. R. Gosavi</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home" translate="no">Mr. Prathmesh R.&nbsp;Gosavi</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#fdp">FDP / STTP / Workshops</a></li>
+        <li><a href="#certs">NPTEL / SWAYAM / MOOC</a></li>
+        <li><a href="#lectures">Guest Lectures</a></li>
+        <li><a href="#research">Research Publications</a></li>
+        <li><a href="#patents">Patents</a></li>
+        <li><a href="#recognition">Recognition &amp; Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-facets" aria-hidden="true"></div>
+      <figure class="portrait">
+        <!-- Replace assets/photo.jpg with the real portrait (approx 780x1000). Falls back to initials. -->
+        <img src="assets/photo.jpg" alt="Portrait of Mr. Prathmesh R. Gosavi" width="390" height="500" fetchpriority="high"
+             onerror="this.remove()">
+        <span class="portrait-fallback" aria-hidden="true">PG</span>
+      </figure>
+      <div class="hero-text">
+        <h1 translate="no">Mr. Prathmesh R. Gosavi</h1>
+        <p class="deg">B.E. M.E.</p>
+        <p>Assistant Professor</p>
+        <p>AI &amp; DS Engineering Department</p>
+        <p>Yashoda Technical Campus, Satara</p>
+        <div class="hero-cta">
+          <a class="btn" href="#contact">Contact Me</a>
+          <a class="btn ghost" href="#research">Publications</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="sec profile" id="profile">
+      <h2>Profile</h2>
+      <div class="profile-grid">
+        <div class="prose reveal">
+          <p id="profile-text"></p>
+        </div>
+        <dl class="facts reveal" id="facts"></dl>
+      </div>
+    </section>
+
+    <!-- FDP -->
+    <section class="sec alt" id="fdp">
+      <h2>FDP / STTP / Workshops Attended</h2>
+      <div id="fdp-list" class="year-groups"></div>
+    </section>
+
+    <!-- CERTS -->
+    <section class="sec" id="certs">
+      <h2>NPTEL / SWAYAM / MOOC Certifications</h2>
+      <div id="cert-grid" class="cert-grid"></div>
+    </section>
+
+    <!-- LECTURES -->
+    <section class="sec alt" id="lectures">
+      <h2>Guest Lectures Conducted</h2>
+      <ol id="lecture-list" class="timeline"></ol>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="sec" id="research">
+      <h2>Research Publications &amp; Conferences</h2>
+      <div class="tabs" role="tablist" aria-label="Publication type">
+        <button role="tab" aria-selected="true" data-tab="journal" id="tab-journal" aria-controls="pub-list">Journals</button>
+        <button role="tab" aria-selected="false" data-tab="conference" id="tab-conference" aria-controls="pub-list">Conferences</button>
+      </div>
+      <ul id="pub-list" class="pubs" role="tabpanel" aria-labelledby="tab-journal"></ul>
+    </section>
+
+    <!-- PATENTS -->
+    <section class="sec alt" id="patents">
+      <h2>Patents</h2>
+      <div id="patent-grid" class="patent-grid"></div>
+    </section>
+
+    <!-- RECOGNITION -->
+    <section class="sec" id="recognition">
+      <h2>Recognition &amp; Achievements</h2>
+      <div id="recog-grid" class="recog-grid"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="sec contact" id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <address class="reveal" id="contact-info"></address>
+        <form class="form reveal" id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Full name…">
+            <p class="err" id="err-name" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" spellcheck="false" required placeholder="you@example.com">
+            <p class="err" id="err-email" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" rows="5" required placeholder="How can I help…"></textarea>
+            <p class="err" id="err-msg" role="alert"></p>
+          </div>
+          <button class="btn" type="submit">Send Message</button>
+          <p class="ok" id="form-ok" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>&copy; <span id="yr"></span> Mr. Prathmesh R. Gosavi. Yashoda Technical Campus, Satara.</p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
