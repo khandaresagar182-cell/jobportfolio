@@ -60,6 +60,6 @@ window.PORTFOLIO = {
   contact: {
     email: "name@example.com",
     phone: "+91 00000 00000",
-    address: "AI & ML Engineering, Yashoda Technical Campus, Faculty of Polytechnic, Satara, Maharashtra, India"
+    address: "47, Vyanketpura Peth, More Colony Road, Satara, 415 002, Maharashtra, India"
   }
 };
