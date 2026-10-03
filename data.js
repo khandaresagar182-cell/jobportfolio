@@ -1,16 +1,16 @@
 // All page content lives here. Entries marked "Sample" are placeholders: replace with real details.
 window.PORTFOLIO = {
   profile:
-    "Assistant Professor in the AI & DS Engineering Department at Yashoda Technical Campus, Satara, with a B.E. and M.E. in engineering. Teaches and mentors students in artificial intelligence and data science, and contributes to research, faculty development and industry-aligned learning. (Sample text: replace with your own summary.)",
+    "Lecturer in AI & ML Engineering at Yashoda Technical Campus, Faculty of Polytechnic, Satara, with a B.E. (Mech), M.Tech (CSE), a PG Diploma in Data Analysis from State University of New York, and a background in Data Science. Teaches and mentors students in artificial intelligence and data science, and contributes to research, faculty development and industry-aligned learning. (Sample text: replace with your own summary.)",
   facts: [
-    ["Designation", "Assistant Professor"],
-    ["Department", "AI & DS Engineering"],
-    ["Institute", "Yashoda Technical Campus, Satara"],
-    ["Qualification", "B.E., M.E."],
+    ["Designation", "Lecturer"],
+    ["Department", "AI & ML Engineering"],
+    ["Institute", "Yashoda Technical Campus, Faculty of Polytechnic, Satara"],
+    ["Qualification", "Data Science; PG Dip. Data Analysis (State University of New York); M.Tech (CSE Pur.); B.E. (Mech)"],
     ["Areas of interest", "Artificial Intelligence, Data Science, Machine Learning"]
   ],
   experience: [
-    { period: "2022 - Present", role: "Assistant Professor", org: "AI & DS Engineering Department, Yashoda Technical Campus, Satara", note: "Sample: teaching, mentoring and research guidance." },
+    { period: "2022 - Present", role: "Lecturer", org: "AI & ML Engineering, Yashoda Technical Campus, Faculty of Polytechnic, Satara", note: "Sample: teaching, mentoring and research guidance." },
     { period: "2019 - 2022", role: "Lecturer", org: "Sample Engineering College", note: "Sample: taught core computer engineering subjects." }
   ],
   // Sample data: replace with actual subjects and results.
@@ -60,6 +60,6 @@ window.PORTFOLIO = {
   contact: {
     email: "name@example.com",
     phone: "+91 00000 00000",
-    address: "AI & DS Engineering Department, Yashoda Technical Campus, Satara, Maharashtra, India"
+    address: "AI & ML Engineering, Yashoda Technical Campus, Faculty of Polytechnic, Satara, Maharashtra, India"
   }
 };
