@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mr. Prathmesh R. Gosavi | Assistant Professor, AI &amp; DS</title>
-  <meta name="description" content="Academic portfolio: profile, FDP/STTP workshops, certifications, guest lectures, publications, patents and achievements.">
-  <meta name="theme-color" content="#1c181b">
+  <meta name="description" content="Academic portfolio: profile, experience, subjects taught, FDP/STTP workshops, certifications, guest lectures, publications, patents and achievements.">
+  <meta name="theme-color" content="#0c2250">
   <link rel="preload" href="assets/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
@@ -25,6 +25,7 @@
     <nav aria-label="Sections">
       <ul>
         <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#subjects">Subjects</a></li>
         <li><a href="#fdp">FDP / STTP / Workshops</a></li>
         <li><a href="#certs">NPTEL / SWAYAM / MOOC</a></li>
         <li><a href="#lectures">Guest Lectures</a></li>
@@ -67,6 +68,26 @@
           <p id="profile-text"></p>
         </div>
         <dl class="facts reveal" id="facts"></dl>
+      </div>
+      <div class="exp">
+        <h3>Experience</h3>
+        <ol id="exp-list" class="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- SUBJECTS -->
+    <section class="sec alt" id="subjects">
+      <h2>Subjects</h2>
+      <div class="table-wrap reveal" tabindex="0" role="region" aria-label="Subjects taught and results">
+        <table class="subjects">
+          <thead><tr>
+            <th scope="col">Subject Name</th><th scope="col">Semester / Year</th>
+            <th scope="col" class="num">Students</th><th scope="col" class="num">Passed</th>
+            <th scope="col" class="num">Failed</th><th scope="col" class="num">Pass %</th>
+            <th scope="col">Result / Grade</th>
+          </tr></thead>
+          <tbody id="subject-rows"></tbody>
+        </table>
       </div>
     </section>
 

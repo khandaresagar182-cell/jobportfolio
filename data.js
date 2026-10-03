@@ -9,6 +9,17 @@ window.PORTFOLIO = {
     ["Qualification", "B.E., M.E."],
     ["Areas of interest", "Artificial Intelligence, Data Science, Machine Learning"]
   ],
+  experience: [
+    { period: "2022 - Present", role: "Assistant Professor", org: "AI & DS Engineering Department, Yashoda Technical Campus, Satara", note: "Sample: teaching, mentoring and research guidance." },
+    { period: "2019 - 2022", role: "Lecturer", org: "Sample Engineering College", note: "Sample: taught core computer engineering subjects." }
+  ],
+  // Sample data: replace with actual subjects and results.
+  subjects: [
+    { name: "Sample: Machine Learning", term: "TE, Sem V (2023-24)", students: 62, passed: 58, grade: "Distinction" },
+    { name: "Sample: Data Structures", term: "SE, Sem III (2023-24)", students: 70, passed: 61, grade: "First Class" },
+    { name: "Sample: Python Programming", term: "FE, Sem II (2022-23)", students: 66, passed: 60, grade: "First Class" },
+    { name: "Sample: Big Data Analytics", term: "BE, Sem VII (2022-23)", students: 58, passed: 57, grade: "Distinction" }
+  ],
   fdp: [
     { year: "2024", items: [
       { title: "Sample FDP on Generative AI for Educators", org: "Sample Institute", dur: "5 days" },

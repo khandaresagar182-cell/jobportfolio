@@ -8,6 +8,16 @@
   $("#profile-text").textContent = D.profile;
   $("#facts").innerHTML = D.facts.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("");
 
+  // Experience
+  $("#exp-list").innerHTML = D.experience.map((x) => `
+    <li><time>${esc(x.period)}</time><h3>${esc(x.role)}</h3><p class="role-org">${esc(x.org)}</p><p>${esc(x.note)}</p></li>`).join("");
+
+  // Subjects
+  $("#subject-rows").innerHTML = D.subjects.map((s) => {
+    const failed = s.students - s.passed, pct = s.students ? (s.passed / s.students * 100).toFixed(1) : "0.0";
+    return `<tr><td>${esc(s.name)}</td><td>${esc(s.term)}</td><td class="num">${s.students}</td><td class="num">${s.passed}</td><td class="num">${failed}</td><td class="num">${pct}%</td><td><span class="grade">${esc(s.grade)}</span></td></tr>`;
+  }).join("");
+
   // FDP
   $("#fdp-list").innerHTML = D.fdp.map((g) => `
     <div class="year-row">
