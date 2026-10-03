@@ -115,4 +115,60 @@
     }
   }), { rootMargin: "-40% 0px -55% 0px" });
   document.querySelectorAll("main section[id]").forEach((s) => so.observe(s));
+
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Typed focus areas (static list under reduced motion)
+  const typed = $("#typed"), words = D.focus;
+  if (reduce) typed.textContent = words.join(", ");
+  else {
+    let w = 0, i = 0, del = false;
+    (function step() {
+      const word = words[w];
+      typed.textContent = word.slice(0, i);
+      let wait = del ? 35 : 75;
+      if (!del && i === word.length) { del = true; wait = 1600; }
+      else if (del && i === 0) { del = false; w = (w + 1) % words.length; wait = 350; }
+      else i += del ? -1 : 1;
+      setTimeout(step, wait);
+    })();
+  }
+
+  // Hero network: a small neural-net field that reacts to the pointer
+  const hero = $(".hero"), cv = $(".hero-net"), g = cv.getContext("2d");
+  let W = 0, H = 0, nodes = [], ptr = { x: -999, y: -999 }, raf = 0, live = true;
+  const size = () => {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = hero.clientWidth; H = hero.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(Math.min(70, Math.max(28, W * H / 16000)));
+    nodes = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25 }));
+  };
+  const draw = () => {
+    g.clearRect(0, 0, W, H);
+    if (!reduce) for (const a of nodes) {
+      a.x += a.vx; a.y += a.vy;
+      if (a.x < 0 || a.x > W) a.vx *= -1;
+      if (a.y < 0 || a.y > H) a.vy *= -1;
+    }
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 130) { g.strokeStyle = "rgba(147,197,253," + (0.22 * (1 - d / 130)) + ")"; g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }
+      }
+      const near = Math.hypot(a.x - ptr.x, a.y - ptr.y) < 150;
+      if (near) { g.strokeStyle = "rgba(191,219,254,.45)"; g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(ptr.x, ptr.y); g.stroke(); }
+      g.fillStyle = near ? "#dbeafe" : "rgba(147,197,253,.75)";
+      g.beginPath(); g.arc(a.x, a.y, near ? 2.6 : 1.8, 0, 6.283); g.fill();
+    }
+    if (!reduce && live) raf = requestAnimationFrame(draw);
+  };
+  size(); draw();
+  if (!reduce) {
+    hero.addEventListener("pointermove", (e) => { const r = hero.getBoundingClientRect(); ptr.x = e.clientX - r.left; ptr.y = e.clientY - r.top; }, { passive: true });
+    hero.addEventListener("pointerleave", () => { ptr.x = ptr.y = -999; });
+    new IntersectionObserver(([e]) => { live = e.isIntersecting; if (live) { cancelAnimationFrame(raf); draw(); } }).observe(hero);
+  }
+  new ResizeObserver(() => { size(); if (reduce) draw(); }).observe(hero);
 })();

@@ -2,6 +2,7 @@
 window.PORTFOLIO = {
   profile:
     "Lecturer in AI & ML Engineering at Yashoda Technical Campus, Faculty of Polytechnic, Satara, with a B.E. (Mech), M.Tech (CSE), a PG Diploma in Data Analysis from State University of New York, and a background in Data Science. Teaches and mentors students in artificial intelligence and data science, and contributes to research, faculty development and industry-aligned learning. (Sample text: replace with your own summary.)",
+  focus: ["Machine Learning", "Data Science", "Data Analysis", "Applied AI for Education"],
   facts: [
     ["Designation", "Lecturer"],
     ["Department", "AI & ML Engineering"],

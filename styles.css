@@ -55,13 +55,17 @@ main { margin-left: var(--side-w); }
     linear-gradient(60deg, transparent 0 62%, rgba(96,165,250,.16) 62% 100%),
     linear-gradient(150deg, rgba(0,0,0,.18), transparent 40%);
 }
-.portrait { position: relative; margin: 0; aspect-ratio: 39 / 50; background: #1b3a7a; border-radius: var(--r); overflow: hidden; box-shadow: 0 24px 60px -20px rgba(6,16,45,.6); }
+.portrait { position: relative; z-index: 1; margin: 0; aspect-ratio: 39 / 50; background: #1b3a7a; border-radius: var(--r); overflow: hidden; box-shadow: 0 24px 60px -20px rgba(6,16,45,.6); }
 .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .portrait-fallback { position: absolute; inset: 0; display: grid; place-items: center; font-size: 5rem; font-weight: 600; letter-spacing: .06em; color: rgba(255,255,255,.35); }
-.hero-text { position: relative; text-align: right; display: grid; gap: 14px; align-content: start; justify-items: end; padding-top: 4px; }
+.hero-text { position: relative; z-index: 1; text-align: right; display: grid; gap: 14px; align-content: start; justify-items: end; padding-top: 4px; }
 .hero-text h1 { margin: 0 0 4px; font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.1; font-weight: 700; letter-spacing: -.02em; }
 .hero-text p { margin: 0; font-size: clamp(1.2rem, 2.2vw, 1.9rem); line-height: 1.25; color: #eef4ff; }
 .hero-text .deg { font-weight: 500; }
+.hero-text .typed { font: 500 clamp(.95rem, 1.4vw, 1.1rem) "Geist Mono", monospace; color: #93c5fd; min-height: 1.5em; }
+.caret { display: inline-block; width: 8px; height: 1.05em; margin-left: 2px; vertical-align: -.15em; background: #93c5fd; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.hero-net { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .hero-cta { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; justify-content: flex-end; }
 
 .btn {
@@ -253,3 +257,5 @@ address a:hover { color: var(--blue); }
 .grade { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--tint); color: var(--blue); border: 1px solid var(--line); font-weight: 600; font-size: .85rem; }
 
 .btn.gh { gap: 8px; }
+
+@media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
