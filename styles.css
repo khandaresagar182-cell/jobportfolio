@@ -251,3 +251,5 @@ address a:hover { color: var(--blue); }
 .subjects tbody tr:last-child td { border-bottom: 0; }
 .subjects tbody tr:hover { background: var(--tint); }
 .grade { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--tint); color: var(--blue); border: 1px solid var(--line); font-weight: 600; font-size: .85rem; }
+
+.btn.gh { gap: 8px; }

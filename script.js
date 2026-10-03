@@ -65,6 +65,7 @@
   $("#contact-info").innerHTML = `
     <div><dt>Email</dt><dd><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></dd></div>
     <div><dt>Phone</dt><dd><a href="tel:${esc(c.phone.replace(/\s/g, ""))}">${esc(c.phone)}</a></dd></div>
+    <div><dt>GitHub</dt><dd><a href="${esc(c.github)}" target="_blank" rel="noopener">${esc(c.github.replace("https://", ""))}</a></dd></div>
     <div><dt>Address</dt><dd>${esc(c.address)}</dd></div>`;
 
   // Form: validate, then open mail client

@@ -59,6 +59,7 @@ window.PORTFOLIO = {
   ],
   contact: {
     email: "name@example.com",
+    github: "https://github.com/pratham1904",
     phone: "+91 00000 00000",
     address: "47, Vyanketpura Peth, More Colony Road, Satara, 415 002, Maharashtra, India"
   }
